@@ -1,0 +1,24 @@
+{
+  "name": "research_hub_slackbot",
+  "version": "0.1.0",
+  "description": "Slackbot for research hub automation",
+  "author": "Arron <amcl080@aucklanduni.ac.nz>",
+  "scripts": {
+    "start": "node bundle.js",
+    "build": "babel server.js -o bundle.js"
+  },
+  "dependencies": {
+    "@slack/client": "^4.1.0",
+    "request": "^2.85.0"
+  },
+  "engines": {
+    "node": ">=0.12.13"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.8.0",
+    "babel-core": "^6.8.0",
+    "babel-eslint": "^6.0.4",
+    "babel-polyfill": "^6.9.0",
+    "babel-preset-latest": "^6.6.0"
+  }
+}

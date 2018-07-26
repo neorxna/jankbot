@@ -1,0 +1,20 @@
+version: '3.0'
+services:
+  slackbot:
+    build:
+       context: ./research-hub-slackbot/
+    volumes:
+       - ./automation:/automation/
+    restart: always
+    environment:
+       - NODE_ENV=production
+       - SLACK_TOKEN=${SLACK_TOKEN}
+       - BOT_USER_ID=${SLACK_BOT_USER_ID}
+       - JENKINS_USER=${JENKINS_USER}
+       - JENKINS_KEY=${JENKINS_KEY}
+       - HUB_ENVIRONMENT=${HUB_ENVIRONMENT}
+    expose:
+       - "4420"
+    command: "npm start"
+    depends_on:
+       - "automation"
